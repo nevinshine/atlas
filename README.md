@@ -120,33 +120,33 @@ graph TD
 
 | Feature | Status |
 |---|:---:|
-| 32-bit x86 protected mode | ✅ |
-| GDT / TSS / IDT | ✅ |
-| Physical memory manager | ✅ |
-| Virtual memory manager | ✅ |
-| Per-process address spaces | ✅ |
-| Ring 3 userspace execution | ✅ |
-| Process and thread separation | ✅ |
-| Preemptive scheduler | ✅ |
-| Kernel threads | ✅ |
-| Synchronization (mutex, spinlock, wait queue) | ✅ |
-| System call infrastructure | ✅ |
-| Safe userspace memory access (`copy_from_user` / `copy_to_user`) | ✅ |
-| Pipes (IPC) | ✅ |
+| 32-bit x86 protected mode | Done |
+| GDT / TSS / IDT | Done |
+| Physical memory manager | Done |
+| Virtual memory manager | Done |
+| Per-process address spaces | Done |
+| Ring 3 userspace execution | Done |
+| Process and thread separation | Done |
+| Preemptive scheduler | Done |
+| Kernel threads | Done |
+| Synchronization (mutex, spinlock, wait queue) | Done |
+| System call infrastructure | Done |
+| Safe userspace memory access (`copy_from_user` / `copy_to_user`) | Done |
+| Pipes (IPC) | Done |
 
 ### Virtual File System & Storage
 
 | Feature | Status |
 |---|:---:|
-| VFS abstraction layer | ✅ |
-| File descriptors (`open`, `read`, `write`, `close`, `lseek`) | ✅ |
-| `dup` / `dup2` | ✅ |
-| Mount / unmount | ✅ |
-| RAMFS | ✅ |
-| Device filesystem | ✅ |
-| Generic block-device layer | ✅ |
-| Byte-to-block translation | ✅ |
-| RAM disk driver | ✅ |
+| VFS abstraction layer | Done |
+| File descriptors (`open`, `read`, `write`, `close`, `lseek`) | Done |
+| `dup` / `dup2` | Done |
+| Mount / unmount | Done |
+| RAMFS | Done |
+| Device filesystem | Done |
+| Generic block-device layer | Done |
+| Byte-to-block translation | Done |
+| RAM disk driver | Done |
 
 ### EXT2 Filesystem
 
@@ -154,17 +154,17 @@ Atlas includes an incrementally developed, writable EXT2 implementation:
 
 | Feature | Status |
 |---|:---:|
-| Superblock and geometry validation | ✅ |
-| Directory traversal and lookup | ✅ |
-| Regular file reads (direct + singly-indirect blocks) | ✅ |
-| Block and inode allocation | ✅ |
-| Regular file writes and growth | ✅ |
-| File creation (`O_CREAT`) | ✅ |
-| Directory creation (`mkdir`) with `.` and `..` entries | ✅ |
-| Persistent mutation across unmount/remount | ✅ |
-| Deletion (`unlink`, `rmdir`) | 🔜 |
-| Rename | 🔜 |
-| Doubly/triply-indirect blocks | 🔜 |
+| Superblock and geometry validation | Done |
+| Directory traversal and lookup | Done |
+| Regular file reads (direct + singly-indirect blocks) | Done |
+| Block and inode allocation | Done |
+| Regular file writes and growth | Done |
+| File creation (`O_CREAT`) | Done |
+| Directory creation (`mkdir`) with `.` and `..` entries | Done |
+| Persistent mutation across unmount/remount | Done |
+| Deletion (`unlink`, `rmdir`) | Planned |
+| Rename | Planned |
+| Doubly/triply-indirect blocks | Planned |
 
 ### Networking
 
@@ -193,22 +193,22 @@ graph LR
 
 | Feature | Status |
 |---|:---:|
-| Packet buffer abstraction (push/pull) | ✅ |
-| Network device abstraction | ✅ |
-| Dummy NIC (deterministic testing) | ✅ |
-| Ethernet framing, parsing, MAC filtering | ✅ |
-| ARP requests, replies, and cache | ✅ |
-| IPv4 framing, validation, and checksum | ✅ |
-| IPv4 protocol demultiplexing | ✅ |
-| ICMP Echo Request / Reply | ✅ |
-| UDP with pseudo-header checksum | ✅ |
-| UDP port dispatch | ✅ |
-| Socket abstraction with receive queues | ✅ |
-| Blocking `recvfrom` with wait queues | ✅ |
-| Socket ↔ file descriptor integration | ✅ |
-| Userspace `socket()`, `bind()`, `sendto()`, `recvfrom()` | ✅ |
-| Hardware NIC driver | 🔜 |
-| TCP | 🔜 |
+| Packet buffer abstraction (push/pull) | Done |
+| Network device abstraction | Done |
+| Dummy NIC (deterministic testing) | Done |
+| Ethernet framing, parsing, MAC filtering | Done |
+| ARP requests, replies, and cache | Done |
+| IPv4 framing, validation, and checksum | Done |
+| IPv4 protocol demultiplexing | Done |
+| ICMP Echo Request / Reply | Done |
+| UDP with pseudo-header checksum | Done |
+| UDP port dispatch | Done |
+| Socket abstraction with receive queues | Done |
+| Blocking `recvfrom` with wait queues | Done |
+| Socket / file descriptor integration | Done |
+| Userspace `socket()`, `bind()`, `sendto()`, `recvfrom()` | Done |
+| Hardware NIC driver | Planned |
+| TCP | Planned |
 
 > [!NOTE]
 > The networking stack currently uses a **dummy network device** (`dummy0`) for deterministic kernel-level testing. Hardware NIC drivers will be added in a future phase.
@@ -243,19 +243,19 @@ gantt
 
 | Phase | Subsystem | Description | Status |
 |:---:|---|---|:---:|
-| 15 | Storage | Generic block device layer | ✅ |
-| 16 | Filesystem | EXT2 read-only filesystem | ✅ |
-| 17A | Filesystem | EXT2 metadata allocation | ✅ |
-| 17B | Filesystem | EXT2 regular file writes | ✅ |
-| 17C | Filesystem | EXT2 file creation (`O_CREAT`) | ✅ |
-| 17D | Filesystem | EXT2 directory creation (`mkdir`) | ✅ |
-| 18A | Networking | Network device layer | ✅ |
-| 18B | Networking | Ethernet framing | ✅ |
-| 18C | Networking | ARP | ✅ |
-| 18D | Networking | IPv4 | ✅ |
-| 18E | Networking | ICMP | ✅ |
-| 18F | Networking | UDP | ✅ |
-| 18G | Networking | Socket API | ✅ |
+| 15 | Storage | Generic block device layer | Done |
+| 16 | Filesystem | EXT2 read-only filesystem | Done |
+| 17A | Filesystem | EXT2 metadata allocation | Done |
+| 17B | Filesystem | EXT2 regular file writes | Done |
+| 17C | Filesystem | EXT2 file creation (`O_CREAT`) | Done |
+| 17D | Filesystem | EXT2 directory creation (`mkdir`) | Done |
+| 18A | Networking | Network device layer | Done |
+| 18B | Networking | Ethernet framing | Done |
+| 18C | Networking | ARP | Done |
+| 18D | Networking | IPv4 | Done |
+| 18E | Networking | ICMP | Done |
+| 18F | Networking | UDP | Done |
+| 18G | Networking | Socket API | Done |
 
 ---
 
