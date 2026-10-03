@@ -1,7 +1,7 @@
 <p align="center">
   <h1 align="center">Atlas</h1>
   <p align="center">
-    <strong>Experimental 32-bit operating system kernel built from the ground up.</strong>
+    <strong>Experimental 32-bit operating system and systems research kernel built from the ground up.</strong>
   </p>
   <p align="center">
     <a href="#architecture">Architecture</a> · <a href="#current-status">Status</a> · <a href="#milestones">Milestones</a> · <a href="#building">Building</a>
@@ -16,6 +16,14 @@ Every subsystem is built incrementally: each phase introduces a clear architectu
 
 > [!NOTE]
 > Atlas is an experimental project. It is not intended to provide the reliability, hardware support, or completeness of production operating systems. Its purpose is experimentation, architecture exploration, and learning through implementation.
+
+---
+
+## Why Atlas?
+
+Atlas is an experiment in building an operating system as a collection of independently designed, testable subsystems.
+
+Rather than implementing a large feature set at once, Atlas develops upward from explicit architectural boundaries — allowing each layer to be validated before becoming infrastructure for the next.
 
 ---
 
