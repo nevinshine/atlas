@@ -152,8 +152,10 @@ int sock_sendto(socket_t *sock, const void *buf, size_t len, uint32_t dest_ip, u
     packet_buffer_t *pkt = net_alloc_packet(len + headroom);
     if (!pkt) return -1;
     
-    pkt->data += headroom;
-    pkt->tail += headroom;
+    // Explicitly set the data pointer so we have exactly 'headroom' bytes before it
+    pkt->data = pkt->head + headroom;
+    pkt->tail = pkt->data;
+    pkt->len = 0;
     
     void *payload = net_packet_put(pkt, len);
     memcpy(payload, buf, len);
