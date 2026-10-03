@@ -25,5 +25,6 @@ typedef struct tss_entry {
 
 void gdt_init(void);
 void tss_prepare(struct thread *thread);
+extern void gdt_set_tls(uint32_t base);
 
 #endif

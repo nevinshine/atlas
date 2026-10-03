@@ -18,6 +18,7 @@ typedef struct {
 
 void pmm_init(multiboot_info_t *mboot_info);
 phys_addr_t pmm_alloc_frame(void);
+void pmm_ref_frame(phys_addr_t paddr);
 void pmm_free_frame(phys_addr_t paddr);
 phys_addr_t pmm_alloc_contiguous(size_t frames);
 

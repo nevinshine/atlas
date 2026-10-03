@@ -20,8 +20,11 @@ void vmm_map(uint32_t virt, uint32_t phys, uint32_t flags);
 void vmm_unmap(uint32_t virt);
 uint32_t vmm_translate(uint32_t virt);
 bool vmm_is_mapped(uint32_t virt);
+bool vmm_check_user_access(uint32_t virt, size_t size, bool write);
 void vmm_invalidate(uint32_t virt);
 uint32_t *vmm_clone_directory(void);
+uint32_t *vmm_clone_address_space(void);
+void vmm_destroy_directory(uint32_t *phys_dir);
 void vmm_switch_directory(uint32_t *phys_dir);
 
 #endif

@@ -37,6 +37,10 @@ typedef struct thread {
     void *arg;                  // Thread argument
     
     struct process *process;    // Parent process
+    uint32_t tls_base;          // Thread Local Storage base address
+    
+    uint32_t *futex_uaddr;      // Address this thread is waiting on (if blocked)
+    struct thread *next_futex;  // Link for the futex wait queue
 } thread_t;
 
 /* PID allocation */

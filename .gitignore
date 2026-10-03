@@ -1,0 +1,69 @@
+# Build artifacts
+*.o
+*.bin
+*.iso
+*.img
+*.a
+a.out
+
+# Generated files
+ext2_blob.h
+*.dump
+*.lst
+
+# Disassembly / debug output
+disasm.txt
+dump.s
+
+# Logs
+*.log
+
+# ISO build directory
+iso/
+
+# Compiled ELF binaries (userspace apps rebuilt via make)
+aether_bin
+
+# Compiled userspace test binaries (extensionless ELFs)
+tests/userspace_apps/blocktest
+tests/userspace_apps/cat
+tests/userspace_apps/echo
+tests/userspace_apps/fdtest
+tests/userspace_apps/init
+tests/userspace_apps/memfault
+tests/userspace_apps/memtest
+tests/userspace_apps/pipetest
+tests/userspace_apps/pipetest2
+tests/userspace_apps/pthreadtest
+tests/userspace_apps/socktest
+tests/userspace_apps/test
+tests/userspace_apps/threadtest
+tests/userspace_apps/tlstest
+tests/userspace_apps/wc
+tests/userspace/user.bin
+
+# Compiled libc test binaries (extensionless ELFs)
+runtime/libc/tests/ctype/test_ctype
+runtime/libc/tests/env/test_env
+runtime/libc/tests/format/test_format
+runtime/libc/tests/malloc/test_malloc
+runtime/libc/tests/memory/test_mem*
+runtime/libc/tests/stdio/test_stdio
+runtime/libc/tests/stdlib/test_stdlib
+runtime/libc/tests/string/test_string
+
+# Scratch / one-off files
+patch.c
+test_pipe.c
+test_ternary.c
+rename.py
+18f_tests.c
+
+# IDE / editor
+.vscode/
+.idea/
+*.swp
+*~
+
+# Temporary files
+*.tmp

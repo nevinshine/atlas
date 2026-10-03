@@ -1,0 +1,33 @@
+#ifndef ATLAS_SYSNUMS_H
+#define ATLAS_SYSNUMS_H
+
+// Core Atlas Syscall Numbers (Atlas kernel mapping)
+
+#define ATLAS_SYS_EXIT  0
+#define ATLAS_SYS_WRITE 1
+#define ATLAS_SYS_YIELD 2
+#define ATLAS_SYS_OPEN  3
+#define ATLAS_SYS_READ  4
+#define ATLAS_SYS_CLOSE 5
+#define ATLAS_SYS_IOCTL 6
+#define ATLAS_SYS_LSEEK 7
+#define ATLAS_SYS_MMAP  8
+#define ATLAS_SYS_MPROTECT 9
+#define ATLAS_SYS_MUNMAP 10
+#define ATLAS_SYS_WAIT4 11
+#define ATLAS_SYS_FORK 12
+#define ATLAS_SYS_EXECVE 13
+
+#define ATLAS_SYS_BRK 14
+#define ATLAS_SYS_GETPID 15
+#define ATLAS_SYS_KILL 16
+#define ATLAS_SYS_FUTEX 18
+#define ATLAS_SYS_PIPE 19
+#define ATLAS_SYS_DUP 20
+#define ATLAS_SYS_DUP2 21
+#define ATLAS_SYS_SOCKET 22
+#define ATLAS_SYS_BIND 23
+#define ATLAS_SYS_SENDTO 24
+#define ATLAS_SYS_RECVFROM 25
+
+#endif

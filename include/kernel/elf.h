@@ -9,6 +9,7 @@
 #define ELFDATA2LSB 1
 #define EV_CURRENT  1
 #define ET_EXEC     2
+#define ET_DYN      3
 #define EM_386      3
 
 // Segment types
@@ -19,6 +20,7 @@
 #define PT_NOTE     4
 #define PT_SHLIB    5
 #define PT_PHDR     6
+#define PT_TLS      7
 
 // Segment flags
 #define PF_X        1

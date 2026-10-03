@@ -7,7 +7,8 @@
 #include "kernel/scheduler/process.h"
 
 // Verify that [ptr, ptr+size) is entirely within the mapped user address space
-bool user_ptr_valid(const void *ptr, size_t size);
+// and has the required permissions (write = true requires writable pages)
+bool user_ptr_valid(const void *ptr, size_t size, bool write);
 
 // Copy memory from user space to kernel space safely
 // Returns 0 on success, or -1 on invalid access
